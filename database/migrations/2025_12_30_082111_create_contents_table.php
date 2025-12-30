@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -25,9 +24,6 @@ return new class extends Migration
             
             $table->index(['category_id', 'is_featured']);
         });
-        
-        // Ensure UTF8mb4 charset for Arabic support
-        DB::statement('ALTER TABLE contents CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci');
     }
 
     /**
